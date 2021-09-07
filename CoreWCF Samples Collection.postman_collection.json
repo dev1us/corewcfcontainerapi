@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "b95a6dbe-ad8b-4bdb-82f3-41301cb8f0e6",
+		"name": "CoreWCF Samples Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CoreWCF NetCoreServer Sample Request (SOAP 1.1)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"http://tempuri.org/IEchoService/Echo\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n <soapenv:Body>\r\n <Echo xmlns=\"http://tempuri.org/\">\r\n\t<text>Hello</text>\r\n </Echo>\r\n </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/EchoService/basichttp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"EchoService",
+						"basichttp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
